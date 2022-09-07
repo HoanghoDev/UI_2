@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
+body{
+    background-color: #dedee0;
+    font-family: 'Pacifico', cursive;
+
+}
+.container{
+    background-color: #eee;
+    position: fixed;
+    top:50%;
+    left:50%;
+    width:1000px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    border-radius: 13px;
+}
+.item{
+    background-color: #d9c2f4;
+    position: absolute;
+    top:0%;
+    right:0%;
+    width:100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: none;
+}
+.active{
+    opacity: 1;
+    z-index: 5;
+    display: block;
+}
+.hide{
+    opacity: 1;
+    z-index: 4;
+}
+.bg-1{
+    background-color: #d9c2f4;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #d9c2f4, #ac74ee 28%, #d9c2f4);
+}
+.bg-2{
+    background-color: #DFBC47;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #9ED2D0, #669593 28%, #9ED2D0);
+}
+.bg-3{
+    background-color: #9ED2D0;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #DFBC47, #A7801C 28%, #DFBC47);
+}
+.active{
+    animation: showitem 2.3s ease-in-out 1 forwards;
+}
+.item img:nth-child(1){
+    position: absolute;
+    left:65%;
+    bottom:10%;
+    height: 80%;
+    z-index: 10;
+}
+.item img:nth-child(4){
+    position: absolute;
+    left:65%;
+    top:78%;
+    height: 80%;
+    transform: rotate(180deg);
+    filter: blur(17px);
+}
+.item img:nth-child(2){
+    position: absolute;
+    left:50%;
+    bottom:10%;
+    height: 80%;
+    z-index: 10;
+}
+.item img:nth-child(5){
+    position: absolute;
+    left:50%;
+    top:80%;
+    height: 80%;
+    transform: rotate(180deg);
+    filter: blur(17px);
+}
+.item img:nth-child(3){
+    position: absolute;
+    left:40%;
+    bottom:30%;
+   width:100px;
+   z-index: 10;
+}
+.item img:nth-child(6){
+    position: absolute;
+    left:40%;
+    top:83%;
+   width:100px;
+   transform: rotate(180deg);
+    filter: blur(17px);
+}
+@keyframes showitem{
+    0%{
+        width:0%;
+    }100%{
+        width:100%;
+    }
+}
+.active img:nth-child(3), .active img:nth-child(6){
+    animation: showimg3 3.7s ease-in-out 1 forwards;
+}
+.active img:nth-child(1), .active img:nth-child(4){
+    opacity: 0;
+    animation: showimg1 2.7s ease-in-out 0.7s 1 forwards;
+}
+@keyframes showimg3{
+    0%{
+        left:80%;
+        transform: rotate(0);
+    }100%{
+        left:40%;
+        transform: rotate(90deg);
+    }
+}
+@keyframes showimg1{
+    0%{
+        filter: blur(3px);
+        left:55%;
+        opacity: 0;
+    }45%{
+        left:67%;
+    }
+    100%{
+        left:65%;
+        opacity: 1;
+    }
+}
+.content{
+    position: absolute;
+    top:10%;
+    left:10%;
+    width:170px;
+    height: 300px;
+    padding:10px;
+    border:1px solid #f8eee3;
+    border-radius: 20px;
+}
+.content1{
+    height: 150px;
+    background-color: #181725;
+    border-radius: 10px;
+    color: #F4EAF2;
+    padding:10px 20px
+}
+.content2{
+    height: 100px;
+    margin-top:10px;
+    background-color: #F4EAF2;
+    border-radius: 10px;
+    padding:10px 20px
+}
+.content3{
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    background-color: #8A4E53;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: small;
+    color: #eee;
+    overflow: hidden;
+}
+.content4{
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    background-color: rgb(233,78,81);
+    border-radius: 5px;
+    color: #eee;
+    font-size: small;
+    padding: 0 10px 3px;
+    z-index: 1111111111;
+}
+.content4::before{
+    position:absolute;
+    bottom:100%;
+    left:50%;
+    transform:translate(-50%,150%) rotate(45deg);
+    content:'';
+    width:20px;
+    height: 20px;
+    background-color: rgb(233,78,81);
+    z-index: -1;
+}
+.content::before{
+    position: absolute;
+    top:110%;
+    left:0;
+    width:100%;
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(to bottom, #fff, rgb(233,78,81));
+    filter: blur(30px);
+    opacity: 0.3;
+}
+.active .content{
+    opacity: 0;
+    animation:  showcontent 1.6s ease-in-out 1 forwards;
+}
+.active .content1{
+    opacity: 0;
+    animation:  showcontent1 3.6s ease-in-out 1 forwards;
+}
+.active .content::before{
+    opacity: 0;
+    animation:  showcontentbf 3.6s ease-in-out 1 forwards;
+}
+.active .content2{
+    opacity: 0;
+    animation:  showcontent1 2s ease-in-out 0.3s 1 forwards;
+}
+.active .content3{
+    opacity: 0;
+    animation:  showcontent1 2s ease-in-out 1s 1 forwards;
+}
+.active .content4{
+    opacity: 0;
+    animation:  showcontent4 1s ease-in-out 1.6s 1 forwards;
+}
+
+
+@keyframes showcontent{
+    0%{
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+@keyframes showcontent1{
+    0%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translate(230px);
+    }
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+@keyframes showcontentbf{
+    0%{
+        opacity: 0;
+        transform: translate(230px);
+    }
+    100%{
+        opacity: 0.3;
+        transform: translate(0px);
+    }
+}
+@keyframes showcontent4{
+    0%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translate(0, 30px);
+    }
+    50%{
+        transform: translate(0, -30px);
+    }
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+.hide{
+    display: block;
+}
+.hide .content{
+    animation:  contenthide 2s ease-in-out 0.2s 1 forwards;
+}
+.hide .content1{
+    animation:  contenthide1 2s ease-in-out 0.2s 1 forwards;
+}
+.hide .content4, .hide .content3{
+    animation:  contenthide1 2s ease-in-out 0.2s 1 forwards;
+}
+h1{
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 300px;
+    line-height: 34px;
+}
+@keyframes contenthide{
+    0%{
+        transform: translate(0,0);
+        filter: blur(0);
+    }100%{
+        transform: translate(400px,0);
+    }
+}
+@keyframes contenthide1{
+    0%{
+        transform: translate(0,0);
+        filter: blur(0);
+    }100%{
+        transform: translate(-200px,0);
+        filter: blur(10px);
+    }
+}
+.hide img:nth-child(3), .hide img:nth-child(6){
+    animation: hideimg3 2.3s ease-in-out 1 forwards;
+}
+.hide img:nth-child(2), .hide img:nth-child(5){
+    animation: hideimg2 2.3s ease-in-out 1 forwards;
+}
+.hide img:nth-child(1), .hide img:nth-child(4){
+    animation: hideimg1 2.3s ease-in-out 1 forwards;
+}
+@keyframes hideimg3{
+    0%{
+        transform: rotate(90deg);
+        left:40%;
+    } 100%{
+        transform: rotate(0deg);
+        left:60%;
+        filter: blur(20px);
+    }
+}
+@keyframes hideimg2{
+    0%{
+        left:50%;
+    } 100%{
+        left:20%;
+        filter: blur(20px);
+    }
+}
+@keyframes hideimg1{
+    0%{
+        left:65%;
+    } 100%{
+        left:10%;
+        filter: blur(20px);
+    }
+}
+.header{
+    position: absolute;
+    top:10px;
+    left:5%;
+    width:90%;
+    z-index: 1111111111111;
+}
+.header ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.header ul li{
+    display: inline-block;
+    font-size: 10px;
+    padding:5px 10px;
+    color: #fff;
+}
+.header .left{
+    float: left;
+}
+.header .right{
+    float: right;
+}
+.header .right li:nth-child(2){
+   border:1px solid #fff;
+   border-radius: 4px;
+}
+
+.menu{
+    position: absolute;
+    background: #fff;
+    border-radius: 15px;
+    left:50%;
+    bottom:-25px;
+    transform: translate(-50%, 0);
+    z-index: 1111111111111;
+}
+.menu ul{
+    padding: 0;
+    margin: 0;
+}
+.menu li{
+    list-style: none;
+    width: 42px;
+    padding: 10px 5px;
+    display: inline-block;
+    border-radius: 15px;
+    text-align: center;
+}
+.menu li:nth-child(4){
+    background-color: #101A1C;
+    color: #fff;
+}
